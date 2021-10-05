@@ -32,7 +32,7 @@ function Nav() {
             <nav>
                 <ul className="flex-row">
                     <li className="mx-2">
-                        <a href="#about" onClick={() => categorySelected()}>
+                        <a href="#about"onClick={() => categorySelected()}>
                             About me
                         </a>
                     </li>
