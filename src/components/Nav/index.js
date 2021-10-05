@@ -1,50 +1,54 @@
 import React from 'react';
+import { capitalizeFirstLetter } from "../../utils/helpers";
 
 function Nav() {
     const categories = [
         {
-            names: "commercial",
+            item: "commercial",
             description: "Photos of grocery stores, food trucks, and other commercial projects"
         },
         {
-            name: "portraits",
+            item: "portraits",
             description: "Portraits of people in my life"
         },
         {
-            name: "food",
+            item: "food",
             description: "Delicious delicacies"
         },
         {
-            name: "landscape",
+            item: "landscape",
             description: "Fields, farmhouses, waterfalls, and the beauty of nature"
         }
     ];
-    function categorySelected() {
-        console.log(`clicked`)
+
+    const categorySelected = (item) => {
+        console.log(item);
+        return item;
     };
-    return (
-        <header data-testid="header" className="flex-row px-1">
+
+    return(
+        <header className="flex-row px-1">
             <h2>
-                <a href="/">
+                <a data-testid="link" href="/">
                     <span role="img" aria-label="camera"> 📸</span> Oh Snap!
                 </a>
             </h2>
             <nav>
                 <ul className="flex-row">
                     <li className="mx-2">
-                        <a href="#about"onClick={() => categorySelected()}>
-                            About me
+                        <a data-testid="about" href="#about" onClick={() => categorySelected("About")}>
+                            About Me
                         </a>
                     </li>
-                    <li className="mx-2">
-                        <span onClick={() => categorySelected()}>
+                    <li>
+                        <span onClick={() => categorySelected("Contact")}>
                             Contact
                         </span>
                     </li>
                     {categories.map((category) => (
-                        <li className="mx-1" key={category.name}>
-                            <span onClick={() => categorySelected()}>
-                                {category.name}
+                        <li className="mx-1" key={category.item}>
+                            <span onClick={() => {categorySelected(category.item);}}>
+                                {capitalizeFirstLetter(category.item)}
                             </span>
                         </li>
                     ))}
@@ -53,5 +57,4 @@ function Nav() {
         </header>
     );
 }
-
 export default Nav;
