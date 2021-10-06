@@ -43,9 +43,9 @@ function Nav(props) {
                             `mx-1 ${currentCategory.item === category.item && 'navActive'}`
                         } key={category.item}>
                             <span onClick={() => {setCurrentCategory(category)}}>
-                                {/* I cannot get the helper to pass the test */}
-                                {/* {capitalizeFirstLetter(category.item)} */}
                                 {category.item}
+                                {/* I cannot get the helper to pass the test 
+                                {capitalizeFirstLetter(category.item)} */}
                             </span>
                         </li>
                     ))}
