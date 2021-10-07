@@ -8,13 +8,9 @@ function Nav(props) {
         currentCategory
     } = props;
     
-    useEffect(() => {
-        document.title = (currentCategory.item);
+    useEffect((props) => {
+        document.title = capitalizeFirstLetter(currentCategory.item);
     }, [currentCategory]);
-    // I cannot get the helper to pass the test
-    // useEffect(() => {
-    //     document.title = capitalizeFirstLetter(currentCategory.item);
-    // }, [currentCategory]);
     
     return(
         <header className="flex-row px-1">
@@ -43,9 +39,7 @@ function Nav(props) {
                             `mx-1 ${currentCategory.item === category.item && 'navActive'}`
                         } key={category.item}>
                             <span onClick={() => {setCurrentCategory(category)}}>
-                                {category.item}
-                                {/* I cannot get the helper to pass the test 
-                                {capitalizeFirstLetter(category.item)} */}
+                                {capitalizeFirstLetter(category.item)}
                             </span>
                         </li>
                     ))}

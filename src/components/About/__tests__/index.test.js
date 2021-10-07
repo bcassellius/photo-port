@@ -15,7 +15,3 @@ describe('About component', ()=> {
         expect(asFragment()).toMatchSnapshot();
     })
 });
-
-//Lesson 20.2.4 Configure the Testing Environment
-
-// const {groceries}=props
