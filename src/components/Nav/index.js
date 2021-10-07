@@ -10,7 +10,7 @@ function Nav(props) {
         setContactSelected
     } = props;
     
-    useEffect((props) => {
+    useEffect(() => {
         document.title = capitalizeFirstLetter(currentCategory.item);
     }, [currentCategory]);
     
