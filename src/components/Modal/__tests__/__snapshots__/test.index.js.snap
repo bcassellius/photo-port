@@ -15,7 +15,6 @@ exports[`Modal component matches snapshot DOM node structure 1`] = `
       </h3>
       <img
         alt="current category"
-        src="1.jpg"
       />
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie
